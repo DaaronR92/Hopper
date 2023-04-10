@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  #game-container {
+    width: 100vw; /* changed from 1200px */
+    height: 800px;
+    background-color: #c0c0c0;
+    overflow-x: scroll;
+    position: relative;
+  }
+  
+  #player {
+    width: 50px;
+    height: 50px;
+    background-color: #ff0000;
+    position: absolute;
+    bottom: 0;
+    left: calc(50vw - 25px); /* changed from 0 */
+  }
+  
+  #enemy {
+    width: 50px;
+    height: 50px;
+    background-color: #00ff00;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: move-enemy 5s linear infinite;
+  }
+  
+  @keyframes move-enemy {
+    0% {
+      right: 0;
+    }
+    50% {
+      right: 100%;
+    }
+    100% {
+      right: 0;
+    }
+  }  
+  
+  @keyframes move-left {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes jump {
+    0% {
+      bottom: 0;
+    }
+    50% {
+      bottom: 200px;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+  
